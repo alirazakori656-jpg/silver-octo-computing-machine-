@@ -1,0 +1,12 @@
+{
+  "name": "shopease-ecommerce",
+  "version": "1.0.0",
+  "description": "Modern full-stack ShopEase ecommerce starter",
+  "main": "server.js",
+  "scripts": {"start": "node server.js", "dev": "node server.js"},
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1"
+  }
+}
