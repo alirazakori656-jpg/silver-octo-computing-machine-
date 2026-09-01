@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ShopEase — Shop Smart. Live Better.</title>
+<meta name="description" content="ShopEase modern online shopping store">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="/">
+<meta property="og:title" content="ShopEase"><meta property="og:description" content="Shop Smart. Live Better.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#home">Shop<span>Ease</span></a>
+  <nav>
+    <a href="#home">Home</a><a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#deals">Deals</a><a href="#contact">Contact</a><a href="#admin">Admin</a>
+  </nav>
+  <div class="actions"><button onclick="toggleCart()">🛒 <b id="cartCount">0</b></button><button onclick="document.getElementById('search').focus()">🔎</button></div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div><p class="eyebrow">NEW COLLECTION 2026</p><h1>Shop Smart.<br><span>Live Better.</span></h1><p>Discover quality products, great deals and a smooth shopping experience.</p><a class="btn" href="#shop">Shop Now</a> <a class="btn ghost" href="#deals">Explore Deals</a></div>
+  <div class="hero-card"><div>⚡</div><strong>UP TO 40% OFF</strong><small>Selected products</small></div>
+</section>
+
+<section id="categories" class="section"><div class="section-head"><div><p class="eyebrow">EXPLORE</p><h2>Shop by Category</h2></div></div><div class="categories" id="categoryList"></div></section>
+
+<section id="shop" class="section">
+ <div class="section-head"><div><p class="eyebrow">OUR STORE</p><h2>Featured Products</h2></div></div>
+ <div class="toolbar"><input id="search" placeholder="Search products, brands or categories..." oninput="loadProducts()"><select id="sort" onchange="loadProducts()"><option value="featured">Featured</option><option value="newest">Newest</option><option value="low">Price Low to High</option><option value="high">Price High to Low</option><option value="rating">Best Rated</option><option value="popular">Most Popular</option></select></div>
+ <div id="products" class="grid"></div>
+</section>
+
+<section id="deals" class="deal"><div><p class="eyebrow">LIMITED TIME</p><h2>Special Deals</h2><p>Free delivery on orders over Rs. 10,000.</p></div><a class="btn" href="#shop">Shop Deals</a></section>
+
+<section class="section"><div class="section-head"><div><p class="eyebrow">TRUSTED SHOPPING</p><h2>Why Choose Us</h2></div></div><div class="features"><div>🚚<b>Fast Delivery</b><small>Reliable doorstep delivery</small></div><div>🔒<b>Secure Payments</b><small>Your information stays protected</small></div><div>↩️<b>Easy Returns</b><small>Simple return process</small></div><div>⭐<b>Quality Products</b><small>Carefully selected items</small></div></div></section>
+
+<section class="section"><div class="section-head"><div><p class="eyebrow">CUSTOMERS</p><h2>What People Say</h2></div></div><div class="reviews"><article>★★★★★<p>“Great products and a very easy ordering experience.”</p><b>— Ahmed</b></article><article>★★★★★<p>“Fast delivery and exactly what I expected.”</p><b>— Sana</b></article><article>★★★★★<p>“The deals are excellent. I’ll shop again.”</p><b>— Hamza</b></article></div></section>
+
+<section id="contact" class="section contact"><div><p class="eyebrow">GET IN TOUCH</p><h2>Need help?</h2><p>Contact our support team for questions about products and orders.</p></div><form onsubmit="event.preventDefault();toast('Message sent successfully')"><input required placeholder="Name"><input required type="email" placeholder="Email"><input placeholder="Phone"><textarea required placeholder="Message"></textarea><button class="btn">Send Message</button></form></section>
+
+<section id="admin" class="section admin"><div class="section-head"><div><p class="eyebrow">STORE MANAGEMENT</p><h2>Admin Dashboard</h2></div></div><div id="stats" class="stats"></div><div class="admin-panels"><div><h3>Add Product</h3><form id="productForm" class="formgrid"><input name="name" required placeholder="Product name"><input name="category" placeholder="Category"><input name="brand" placeholder="Brand"><input name="price" required type="number" placeholder="Price"><input name="sale_price" type="number" placeholder="Sale price"><input name="stock" type="number" placeholder="Stock"><input name="image" placeholder="Image URL"><textarea name="description" placeholder="Description"></textarea><button class="btn">Add Product</button></form></div><div><h3>Recent Orders</h3><div id="orders"></div></div></div></section>
+</main>
+
+<aside id="cart" class="cart"><div class="cart-head"><h2>Your Cart</h2><button onclick="toggleCart()">✕</button></div><div id="cartItems"></div><div class="cart-total"><span>Total</span><b id="cartTotal">Rs. 0</b></div><button class="btn full" onclick="checkout()">Checkout</button></aside>
+<div id="modal" class="modal"><div class="modal-box" id="modalBox"></div></div>
+<div id="toast"></div>
+<footer><div><a class="logo" href="#home">Shop<span>Ease</span></a><p>Shop smart. Live better.</p></div><div><b>Quick Links</b><a href="#shop">Shop</a><a href="#deals">Deals</a><a href="#contact">Contact</a></div><div><b>Support</b><a>Privacy Policy</a><a>Terms & Conditions</a><a>Shipping & Returns</a></div></footer>
+<script src="/app.js"></script>
+</body></html>
